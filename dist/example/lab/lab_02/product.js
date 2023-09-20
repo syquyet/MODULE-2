@@ -1,11 +1,11 @@
 "use strict";
 class Product {
-    constructor(id, name, price, quantity, src) {
+    constructor(id, name, price, quantity, url) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.id = id;
-        this.src = src;
+        this.url = url;
     }
     get info() {
         return {
@@ -13,7 +13,7 @@ class Product {
             price: this.price,
             quantity: this.quantity,
             id: this.id,
-            src: this.src,
+            url: this.url,
         };
     }
     set setName(name) {
@@ -35,7 +35,7 @@ class Bakery {
         if (this.productList.length > 0) {
             id = this.productList[this.productList.length - 1].id + 1;
         }
-        const newProduct = new Product(id, data.name, data.price, data.quantity, data.src);
+        const newProduct = new Product(id, data.name, data.price, data.quantity, data.url);
         this.productList.push(newProduct);
     }
     showAllProduct() {
@@ -51,7 +51,7 @@ class Bakery {
             const product = this.productList.find((product) => product.id == data.id);
             const index = this.productList.findIndex((product) => product.id == data.id);
             const newProduct = { ...product?.info, ...data };
-            const productAdd = new Product(newProduct.id, newProduct.name, newProduct.price, newProduct.quantity, newProduct.src);
+            const productAdd = new Product(newProduct.id, newProduct.name, newProduct.price, newProduct.quantity, newProduct.url);
             this.productList.splice(index, 1, productAdd);
         }
     }
@@ -63,7 +63,7 @@ class Bakery {
         }
         if (product.info.quantity > 0) {
             product.setQuantity = product.info.quantity - 1;
-            const newProduct = new Product(product.info.id, product.info.name, product.info.price, 1, product.info.src);
+            const newProduct = new Product(product.info.id, product.info.name, product.info.price, 1, product.info.url);
             return newProduct;
         }
         else {
@@ -80,31 +80,31 @@ store.createProduct({
     name: "Bánh trung thu",
     price: 70000,
     quantity: 50,
-    src: "https://th.bing.com/th?id=OIP.dBVZPCpUTmtLRqgRPBNK1gHaEz&w=310&h=201&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    url: "https://th.bing.com/th?id=OIP.dBVZPCpUTmtLRqgRPBNK1gHaEz&w=310&h=201&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
 });
 store.createProduct({
     name: "Bánh bao",
     price: 15000,
     quantity: 20,
-    src: "https://th.bing.com/th/id/OIP.DLBZrif5kkVMWntP0itHIgHaE7?w=250&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    url: "https://th.bing.com/th/id/OIP.DLBZrif5kkVMWntP0itHIgHaE7?w=250&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
 });
 store.createProduct({
     name: "Bánh mì",
     price: 30000,
     quantity: 200,
-    src: "https://th.bing.com/th/id/OIP.IxSQxenayDYM2oZcHwj7PgHaEo?w=286&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    url: "https://th.bing.com/th/id/OIP.IxSQxenayDYM2oZcHwj7PgHaEo?w=286&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
 });
 store.createProduct({
     name: "Bánh bông lan ",
     price: 20000,
     quantity: 200,
-    src: "https://th.bing.com/th/id/OIP.w9q8f5O0bC4wQdnKhwYzFgHaE8?w=243&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    url: "https://th.bing.com/th/id/OIP.w9q8f5O0bC4wQdnKhwYzFgHaE8?w=243&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
 });
 store.createProduct({
     name: "Bánh bông lan ",
     price: 25000,
     quantity: 200,
-    src: "https://th.bing.com/th/id/OIP.w9q8f5O0bC4wQdnKhwYzFgHaE8?w=243&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    url: "https://th.bing.com/th/id/OIP.w9q8f5O0bC4wQdnKhwYzFgHaE8?w=243&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
 });
 console.log(store.showAllProduct());
 class MyCart {
@@ -158,7 +158,7 @@ function renderProduct(products) {
         content += `<div class="card">
   <div class="img">
     <img
-      src="${product.src}"
+      src="${product.url}"
       alt=""
       width="100%"
       height="100%"
