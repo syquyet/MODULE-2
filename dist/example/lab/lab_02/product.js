@@ -44,6 +44,7 @@ class Bakery {
     }
     deleteProduct(id) {
         const newList = this.productList.filter((product) => product.id !== id);
+        console.log(2222222222, newList);
         this.productList = newList;
     }
     updateProduct(data) {
@@ -148,13 +149,10 @@ class MyCart {
 const user_1 = new MyCart();
 user_1.buyProductCart(3);
 user_1.buyProductCart(3);
-user_1.updateCart(3, -1);
 console.log(111, user_1.showAllCart());
 console.log(2222, store.showAllProduct());
 const productElement = document.querySelector(".album");
-console.log(121232, productElement);
 function renderProduct(products) {
-    console.log(4444, products);
     let content = "";
     for (const product of products) {
         content += `<div class="card">
@@ -175,3 +173,32 @@ function renderProduct(products) {
     productElement.innerHTML = content;
 }
 renderProduct(store.showAllProduct());
+const productElementCart = document.querySelector(".admin-product-list");
+function renderProductCart(products) {
+    let content = `<tr>
+  <th>#</th>
+  <th>ID</th>
+  <th>TÊN SẢN PHẨM</th>
+  <th>GIÁ</th>
+  <th>SỐ LƯỢNG</th>
+  <th>HÀNH ĐỘNG</th>
+</tr>`;
+    products.forEach((product, index) => {
+        content += `<tr>
+    <td>${index + 1}</td>
+    <td>${product.id}</td>
+    <td>${product.name}</td>
+    <td>${product.price.toLocaleString()}VND</td>
+    <td>${product.quantity}</td>
+    <td><button onclick="handleEdit('${product.id}')">sửa</button><button onclick="handleDelete(${product.id})">xóa</button></td>
+  </tr>`;
+    });
+    productElementCart.innerHTML = content;
+}
+renderProductCart(store.showAllProduct());
+function handleDelete(id) {
+    store.deleteProduct(id);
+    console.log(store, 11);
+    renderProductCart(store.showAllProduct());
+    renderProduct(store.showAllProduct());
+}

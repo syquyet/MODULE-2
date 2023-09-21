@@ -1,3 +1,11 @@
+interface IN_Product {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  url: string;
+}
+
 class Product {
   readonly id: number;
   private name: string;
@@ -17,13 +25,7 @@ class Product {
     this.id = id;
     this.url = url;
   }
-  get info(): {
-    id: number;
-    name: string;
-    price: number;
-    quantity: number;
-    url: string;
-  } {
+  get info(): IN_Product {
     return {
       name: this.name,
       price: this.price,
@@ -71,6 +73,8 @@ class Bakery {
   }
   deleteProduct(id: number) {
     const newList = this.productList.filter((product) => product.id !== id);
+    console.log(2222222222, newList);
+
     this.productList = newList;
   }
 
@@ -195,7 +199,6 @@ class MyCart {
       if (product.info.id === id) {
         product.setQuantity = product.info.quantity + quantity;
         store.returnProduct(id, -quantity);
-      
       }
     });
   }
@@ -203,17 +206,14 @@ class MyCart {
 const user_1 = new MyCart();
 user_1.buyProductCart(3);
 user_1.buyProductCart(3);
-user_1.updateCart(3, -1);
+// user_1.updateCart(3, -1);
 // user_1.deleteCart(3);
 console.log(111, user_1.showAllCart());
 console.log(2222, store.showAllProduct());
 
 // hiển thị sản phẩm
 const productElement: any = document.querySelector(".album");
-console.log(121232, productElement);
-function renderProduct(products: any) {
-  console.log(4444, products);
-
+function renderProduct(products: IN_Product[]) {
   let content = "";
   for (const product of products) {
     content += `<div class="card">
@@ -235,3 +235,37 @@ function renderProduct(products: any) {
   productElement.innerHTML = content;
 }
 renderProduct(store.showAllProduct());
+//  danh sách sản phẩm
+const productElementCart: any = document.querySelector(".admin-product-list");
+function renderProductCart(products: IN_Product[]) {
+  let content = `<tr>
+  <th>#</th>
+  <th>ID</th>
+  <th>TÊN SẢN PHẨM</th>
+  <th>GIÁ</th>
+  <th>SỐ LƯỢNG</th>
+  <th>HÀNH ĐỘNG</th>
+</tr>`;
+  products.forEach((product: IN_Product, index: number) => {
+    content += `<tr>
+    <td>${index + 1}</td>
+    <td>${product.id}</td>
+    <td>${product.name}</td>
+    <td>${product.price.toLocaleString()}VND</td>
+    <td>${product.quantity}</td>
+    <td><button onclick="handleEdit('${
+      product.id
+    }')">sửa</button><button onclick="handleDelete(${
+      product.id
+    })">xóa</button></td>
+  </tr>`;
+  });
+  productElementCart.innerHTML = content;
+}
+renderProductCart(store.showAllProduct());
+function handleDelete(id: number) {
+  store.deleteProduct(id);
+  console.log(store, 11);
+  renderProductCart(store.showAllProduct());
+  renderProduct(store.showAllProduct());
+}

@@ -1,50 +1,67 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  .banner-content {
-    width: 100%;
-    height: 400px;
-    
-    background-image: 
-      url('./images/image_banner.jpg');
-      background-size: cover;
-     
-  }
-  .album {
-    padding: 50px 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  .content {
-    width: 400px;
-    background-color: rgba(216, 164, 67, 0.405);
-    position: absolute;
-    top: 250px;
-  }
-  h1 {
-    margin-bottom: 10px;
-  }
-  .card {
-    border-top: 4px solid rgba(215, 176, 35, 0.87);
-  }
-
-  .img{
-    width: 100%;
-    height: 60%;
-    object-fit: cover;
-  }
-  h2{
-    text-align: center;
-    margin-top: 30px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-  .album {
-    @media screen and (min-width:992px) {
-      grid-template-columns: repeat(4, 1fr);  
-    }
+
+.banner-content {
+  width: 100%;
+  height: 400px;
+
+  background-image: url("./images/image_banner.jpg");
+  background-size: cover;
+}
+.album {
+  padding: 50px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.content {
+  width: 400px;
+  background-color: rgba(216, 164, 67, 0.405);
+  position: absolute;
+  top: 250px;
+}
+h1 {
+  margin-bottom: 10px;
+}
+.card {
+  border-top: 4px solid rgba(215, 176, 35, 0.87);
+}
+
+.img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+h2 {
+  text-align: center;
+  margin-top: 30px;
+}
+.album {
+  @media screen and (min-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* css table */
+
+.admin-product-list {
+  border: none;
   
+  
+}
+.admin-product-lis tr{
+  border-bottom: 1px rgb(58, 27, 27);
+}
+.admin-product-list tr th{
+  background-color: blueviolet;
+  padding: 5px;
+  color: white;
+}
+.admin-product .admin-product-list{
+  margin: 0 auto;
+}
+.admin-product-list{
+  text-align: center;
 }
