@@ -141,12 +141,14 @@ class MyCart {
             if (product.info.id === id) {
                 product.setQuantity = product.info.quantity + quantity;
                 store.returnProduct(id, -quantity);
-                console.log(333, product.info.quantity);
             }
         });
     }
 }
 const user_1 = new MyCart();
+user_1.buyProductCart(3);
+user_1.buyProductCart(3);
+user_1.updateCart(3, -1);
 console.log(111, user_1.showAllCart());
 console.log(2222, store.showAllProduct());
 const productElement = document.querySelector(".album");

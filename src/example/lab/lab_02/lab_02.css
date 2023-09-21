@@ -27,7 +27,7 @@
     top: 250px;
   }
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .card {
     border-top: 4px solid rgba(215, 176, 35, 0.87);
@@ -38,6 +38,10 @@
     height: 60%;
     object-fit: cover;
   }
+  h2{
+    text-align: center;
+    margin-top: 30px;
+}
   .album {
     @media screen and (min-width:992px) {
       grid-template-columns: repeat(4, 1fr);  
