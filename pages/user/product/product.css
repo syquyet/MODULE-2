@@ -1,0 +1,121 @@
+.d-block {
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+}
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+h1 {
+  text-align: center;
+}
+
+.seach-product {
+  margin: 30px auto;
+  background-color: rgb(148, 226, 200);
+  width: 40%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.seach-product input {
+  background-color: rgb(148, 226, 200);
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 5px;
+
+  border-radius: 5px 0 0 5px;
+}
+.seach-product button {
+  width: 25%;
+  border: none;
+  outline: none;
+  background-color: rgb(191, 88, 88);
+  border-radius: 0 5px 5px 0;
+  color: white;
+  padding: 5px;
+}
+.seach-product button:hover {
+  background-color: rgb(194, 106, 106);
+}
+.banner-product {
+  margin-top: 60px;
+
+}
+.card-img {
+  position: relative;
+  overflow: hidden;
+}
+.btn-img {
+  padding: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  background-color: rgb(9, 9, 9);
+  position: absolute;
+  width: 100%;
+  transition: 0.25s ease-in-out;
+  bottom: -30px;
+  /* opacity: 0.8; */
+}
+.btn-img .view-now {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+.btn-img .buy-now {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+.card:hover .btn-img {
+  bottom: 0px;
+}
+.card-img:hover {
+  filter: opacity(80%);
+}
+.album-seach {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin: 20px 50px;
+}
+.album-seach p {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.btn-img i {
+  color: rgb(191, 88, 88);
+}
+.card {
+  box-shadow: 1px 2px 4px rgba(198, 40, 40, 0.907);
+  margin-bottom: 10px;
+}
+.card-body p {
+  margin: 0;
+}
+.home-trasport {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  margin: 50px 0;
+}
+.home-trasport h6 {
+  background-color: rgb(219, 174, 90);
+  width: 80%;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin-left: 35px;
+  margin-top: 30px;
+}
+.home-trasport p {
+  color: rgb(28, 155, 155);
+}
+.modal-body {
+  display: flex;
+  width: 100%;
+}
