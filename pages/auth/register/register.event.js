@@ -19,7 +19,7 @@ window.onRegister = function () {
     alert("email đã tồn tại vui lòng nhập lại email để đăng ký")
   }else{
     if(response.status==="success"){
-      alert("Đăn ký thành công!!!!!!")
+      alert("Đăng ký thành công!!!!!!")
     }
   }
 };

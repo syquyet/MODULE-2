@@ -1,16 +1,18 @@
 main {
-  background-image: url(/assets/image/background_login.jpg);
+  background-image: url(/assets/image/background\ đăng\ ký.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 form {
-  width: 400px;
+  min-width: 300px;
+  width: 30%;
   border-radius: 10px;
   margin: auto;
-  background-color: transparent;
-  backdrop-filter: blur(5px) brightness(70%);
+  /* background-color: transparent; */
+  backdrop-filter: blur(4px) brightness(60%);
+  box-shadow: 1px 4px 5px rgb(12, 13, 13);
 }
 
 form * {
