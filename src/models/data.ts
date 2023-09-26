@@ -1,4 +1,13 @@
-const products = [
+type product = {
+  id: string;
+  name: string;
+  price: number;
+  size: string[];
+  quantity: number;
+  image: string;
+  describe: string;
+};
+const products: product[] = [
   {
     id: "SP_001",
     name: "váy công sở",
