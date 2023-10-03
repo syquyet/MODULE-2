@@ -1,5 +1,5 @@
-import { getDataFormLocalStorage } from "../../../utils/method.js";
-import { setDataFormLocalStorage } from "../../../utils/method.js";
+import { getDataFormLocalStorage, setDataFormLocalStorage } from "../../../../utils/method.js";
+
 export class RegisterRepository {
   registerUser(userModal) {
     const accountsDB = getDataFormLocalStorage("accounts");

@@ -1,6 +1,7 @@
-import { getDataFormLocalStorage } from "../../../utils/method.js";
-import { setDataFormLocalStorage } from "../../../utils/method.js";
-
+import {
+  getDataFormLocalStorage,
+  setDataFormLocalStorage,
+} from "../../../../utils/method.js";
 
 export class LoginRepository {
   loginUser(userModal) {
@@ -14,7 +15,7 @@ export class LoginRepository {
         }
       }
     }
-    console.log(4444,user);
+    console.log(4444, user);
     if (user) {
       delete user.password;
       setDataFormLocalStorage("userLogin", user);

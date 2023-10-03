@@ -1,7 +1,7 @@
 import { RegisterService } from "./register.service.js";
 window.onRegister = function () {
   const inputElements = document.querySelectorAll(".input-form");
-  let userModal = {};
+    let userModal = {};
   inputElements.forEach((input) => {
     if (input.name) {
       const { name, value } = input;
@@ -15,11 +15,11 @@ window.onRegister = function () {
     return;
   }
   const response = registerService.register(userModal);
-  if(response.status==="fail"){
-    alert("email đã tồn tại vui lòng nhập lại email để đăng ký")
-  }else{
-    if(response.status==="success"){
-      alert("Đăng ký thành công!!!!!!")
+  if (response.status === "fail") {
+    alert("email đã tồn tại vui lòng nhập lại email để đăng ký");
+  } else {
+    if (response.status === "success") {
+      alert("Đăng ký thành công!!!!!!");
     }
   }
 };

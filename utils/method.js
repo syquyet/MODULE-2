@@ -10,7 +10,7 @@ export function getDataFormLocalStorage(key) {
 export function setDataFormLocalStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
-// hàm tạo id cho auto
+// hàm tạo id  auto cho data
 function createIdauto(key, data) {
   const idElement = data[data.length - 1].id;
   const numberId = Number(idElement.slice(key.length + 1));
